@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="/home/horacio/odoo1303/misapps/gpppto.list">
+      <field name="name">/home/horacio/odoo1303/misapps/gpppto list</field>
+      <field name="model">/home/horacio/odoo1303/misapps/gpppto./home/horacio/odoo1303/misapps/gpppto</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="/home/horacio/odoo1303/misapps/gpppto.action_window">
+      <field name="name">/home/horacio/odoo1303/misapps/gpppto window</field>
+      <field name="res_model">/home/horacio/odoo1303/misapps/gpppto./home/horacio/odoo1303/misapps/gpppto</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="/home/horacio/odoo1303/misapps/gpppto.action_server">
+      <field name="name">/home/horacio/odoo1303/misapps/gpppto server</field>
+      <field name="model_id" ref="model_/home/horacio/odoo1303/misapps/gpppto_/home/horacio/odoo1303/misapps/gpppto"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="/home/horacio/odoo1303/misapps/gpppto" id="/home/horacio/odoo1303/misapps/gpppto.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="/home/horacio/odoo1303/misapps/gpppto.menu_1" parent="/home/horacio/odoo1303/misapps/gpppto.menu_root"/>
+    <menuitem name="Menu 2" id="/home/horacio/odoo1303/misapps/gpppto.menu_2" parent="/home/horacio/odoo1303/misapps/gpppto.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="/home/horacio/odoo1303/misapps/gpppto.menu_1_list" parent="/home/horacio/odoo1303/misapps/gpppto.menu_1"
+              action="/home/horacio/odoo1303/misapps/gpppto.action_window"/>
+    <menuitem name="Server to list" id="/home/horacio/odoo1303/misapps/gpppto" parent="/home/horacio/odoo1303/misapps/gpppto.menu_2"
+              action="/home/horacio/odoo1303/misapps/gpppto.action_server"/>
+-->
+  </data>
+</odoo>
