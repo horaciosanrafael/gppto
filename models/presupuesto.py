@@ -3,8 +3,6 @@ from odoo import fields, models, api
 
 class LineaPresupuesto(models.Model):
     _inherit = 'sale.order.line'
-    descuento = fields.Float(Digits = (5,2), string='Descuento', readonly=True, compute='_get_last', store=True)
-    total_bruto = fields.Float(Digits = (5,2), string = 'Total' , readonly=True, compute='_get_last', store=True)
 
     @api.depends('product_uom_qty', 'price_unit', 'discount')
     def _get_last(self):
@@ -17,11 +15,12 @@ class LineaPresupuesto(models.Model):
         self.descuento = self.price_unit * self.product_uom_qty * (self.discount/100)
         self.total_bruto = self.price_unit * self.product_uom_qty
     """
+    descuento = fields.Float(Digits = (5,2), string='Descuento', readonly=True, compute='_get_last', store=True)
+    total_bruto = fields.Float(Digits = (5,2), string = 'Total' , readonly=True, compute='_get_last', store=True)
+
 
 class MontoTotales(models.Model):
     _inherit = 'sale.order'
-    total_descuentos = fields.Float(Digits=(5, 2), string='Total Descontado', readonly=True, compute='_amount_all_gp', store=True)
-    total_sin_descuentos = fields.Float(Digits=(5, 2), string='Total Bruto', readonly=True, compute='_amount_all_gp', store=True)
 
     @api.depends('order_line.price_total')
     def _amount_all_gp(self):
@@ -43,5 +42,8 @@ class MontoTotales(models.Model):
                 'total_descuentos' : total_descuentos,
 
             })
+
+    total_descuentos = fields.Float(Digits=(5, 2), string='Total Descontado', readonly=True, compute='_amount_all_gp', store=True)
+    total_sin_descuentos = fields.Float(Digits=(5, 2), string='Total Bruto', readonly=True, compute='_amount_all_gp', store=True)
 
 

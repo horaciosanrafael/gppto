@@ -28,6 +28,7 @@
         # 'security/ir.model.access.csv',
         'views/views.xml',
         #'views/templates.xml',
+        'views/lineaspptos.xml',
         'views/reporte_ppto.xml',
     ],
     # only loaded in demonstration mode
