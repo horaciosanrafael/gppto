@@ -7,7 +7,7 @@
         <field name="arch" type="xml">
             <xpath expr="//form//sheet//notebook//page//tree//field[@name='price_subtotal']" position="before">
                <field name="total_bruto" string="Total" />
-               <field name="descuentos" string="Descuento" />
+               <field name="descuento" string="Descuento" />
             </xpath>
         </field>
     </record>
